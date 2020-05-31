@@ -8,6 +8,6 @@
   :maxdepth: 2
   :numbered:
 
-  slogan.rst
+  _docs/slogan.rst
 
 

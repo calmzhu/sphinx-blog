@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: nginx-sphinx-blog-deployment
+spec:
+    selector:
+        matchLabels:
+            app: sphinx-blog
+    replicas: 1
+    template:
+        metadata:
+            labels:
+                app: sphinx-blog
+        spec:
+            containers:
+                - name: nginx
+                  image: registry.cn-shanghai.aliyuncs.com/calmzhu/sphinx-blog:23
+                  ports:
+                      - containerPort: 80
+            imagePullSecrets:
+                - name: aliyun-docker-image
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: sphinx-blog
+    labels:
+        app: sphinx-blog
+spec:
+    selector:
+        app: sphinx-blog
+    ports:
+        - port: 80
+          targetPort: 80
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+    name: sphinx-blog-ingress
+spec:
+    rules:
+        - host: www.justcalm.ink
+          http:
+              paths:
+                  - path: /
+                    backend:
+                        serviceName: sphinx-blog
+                        servicePort: 80

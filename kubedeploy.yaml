@@ -39,7 +39,7 @@ metadata:
     name: sphinx-blog-ingress
 spec:
     rules:
-        - host: www.justcalm.ink
+        - host: sphinx-blog.justcalm.ink
           http:
               paths:
                   - path: /

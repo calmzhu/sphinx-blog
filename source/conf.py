@@ -19,7 +19,7 @@ import sphinx_opsas_theme
 
 # -- Project information -----------------------------------------------------
 
-project = 'abit.justcalm.ink'
+project = 'www.justcalm.ink'
 copyright = '2020, calmzhu'
 author = 'calmzhu'
 
@@ -56,6 +56,7 @@ from os import path
 
 html_themes = ['agogo', 'basic', 'haiku', 'nature', 'pyramid', 'sphinxdoc', 'sphinx_opsas_theme']
 html_theme = html_themes[-1]
+html_short_title = '点滴之间'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".

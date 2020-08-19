@@ -2,6 +2,14 @@
 ============
 
 
+kubernetes
+------------
+.. toctree::
+  :maxdepth: 3
+
+  _docs/kubernets/raft.rst
+
+
 诫言
 -------
 .. toctree::
@@ -9,5 +17,4 @@
   :numbered:
 
   _docs/slogan.rst
-
 
